@@ -1,0 +1,95 @@
+.form {
+	width: 90%;
+	max-width: 500px;
+	background-color: #fff;
+	padding: 1.5rem 1rem;
+	margin: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.formTitle {
+	text-align: center;
+	font-size: 2.5rem;
+	color: #3a4453;
+	text-shadow: 0 1px 1px #3a4453;
+}
+
+.formGroup {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	margin-bottom: 3rem;
+	/* border-bottom: 2px solid #bdbdbd; */
+	/* background: red; */
+	display: flex;
+	flex-direction: column;
+}
+
+.form-group::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 100%;
+	height: 2.7px;
+	background-color: #37474f;
+	border-radius: 5px;
+	transform: scale(0);
+	transform-origin: left;
+	transition: transform 300ms linear;
+}
+
+.form-group.active::after {
+	transform: scale(1);
+}
+
+.formInput {
+	height: 100%;
+	border: 0;
+	border-bottom: 2.5px solid #bdbdbd;
+	transition: border-bottom-color 300ms linear;
+}
+
+.formInput:hover,
+.formInput:focus {
+	outline: none;
+}
+
+.formInput:focus {
+	border-bottom-color: #455a64;
+}
+
+.formInput:focus ~ .formLabel,
+.formInput:valid ~ .formLabel {
+	transform: translateY(-10px);
+	left: -5px;
+	font-size: .8rem;
+	color: #546e7a ;
+}
+
+.formLabel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translateY(15px);
+	transition: transform 250ms ease-in-out, color 250ms ease-in-out, left 250ms ease-in-out;
+	transition: all 250ms ease-in-out;
+}
+
+.formBtn {
+	display: block;
+	outline: none;
+	border: 0;
+	color: #fff;
+	width: 100%;
+	padding: 1.3rem;
+	font-size: 1.3rem;
+	text-transform: uppercase;
+	box-shadow: 0 1px 2px #455a64;
+	background-color: #455a64;
+	cursor: pointer;
+}
